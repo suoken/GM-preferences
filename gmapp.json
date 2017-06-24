@@ -1,0 +1,14 @@
+{
+  "name":"Car Prevent",
+  "id":"94015410",
+  "template": "Blank",
+  "version": "0.0.0",
+  "src": "src",
+  "dist": "dist",
+  "main": "index.html",
+  "icon": "Icon.png",
+  "developer": "DreamTeam",
+  "category": "Monitoring",
+  "type": "RemoteHigh",
+  "description": "Generated on 6/24/2017, 3:54:06 PM by ngi-sdk version "
+}
