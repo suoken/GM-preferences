@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GM Preferences </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!-- Base css, but you'll likely want to keep them -->
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/grid.css" type="text/css">
+
+    <!-- Your custom files -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/button.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/icon.min.css">
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/button.min.css"></script>
+    <link rel="stylesheet" href="css/app.css" type="text/css">
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+    
+
+    <script src="GMLIB/system.js"></script>
+    <script src="GMLIB/info.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Uncomment libraries as you need them: -->
+    <!-- <script src="GMLIB/comm.js"></script> -->
+    <!-- <script src="GMLIB/io.js"></script> -->
+    <!-- <script src="GMLIB/media.js"></script> -->
+    <!-- <script src="GMLIB/monitor.js"></script> -->
+    <!-- <script src="GMLIB/nav.js"></script> -->
+    <!-- <script src="GMLIB/phone.js"></script> -->
+    <!-- <script src="GMLIB/ui.js"></script> -->
+    <!-- <script src="GMLIB/util.js"></script> -->
+    <!-- <script src="GMLIB/voice.js"></script> -->
+
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="close"><img src="images/close.png" onclick="gm.system.closeApp()" alt="close"></div>
+      <div id="main">
+
+        <!-- Remove all code inside #main and add your own! -->
+        <div class="row">
+            <div class="col-sm-8 wrap">
+                
+                <div id="app-row-1" class="row">
+                    <div class="col-sm-3 app"><i class="bordered inverted huge green spotify icon" ></i></div>
+                    <div class="col-sm-3 app"><i class="bordered inverted huge brown calendar icon"></i></div>
+                    <div class="col-sm-3 app"><i class="bordered inverted huge blue mail icon"></i></div>
+                    <div class="col-sm-3 app"><i class="bordered inverted huge green comments icon"></i></div>
+                </div>
+                <div id="app-row-2" class="row">
+                    <div class="col-sm-3 app"><i class="bordered inverted huge red alarm icon" ></i></div>
+                </div>
+                <div id="left-right-app-ctrl"><i id="left-arrow" class="disabled big circle outline arrow left icon"></i><i id="right-arrow" class="big circle outline arrow right icon"></i></div>
+                <button class="ui black button btn">
+                    Self-drive
+                </button>
+            </div>
+            
+            <div id="temp-disp" class="col-sm-4 vertical-line">
+                <img src="https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/kweather.png" class="today-weather">
+                <p>Outside</p>
+                <h2>30°C</h2>
+                <hr>
+                <p>Inside</p>
+                <h2>20°C</h2>
+            </div>
+        </div>
+
+        
+
+      </div>
+    </div>
+
+    <!-- Your app code: -->
+    <script src="js/app.js"></script>
+	<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+
+  </body>
+</html>
