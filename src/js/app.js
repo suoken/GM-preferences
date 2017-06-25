@@ -22,6 +22,59 @@ function processPosition(position){
   console.log("Long: " + lng);
 }
 
+/*********
+Google maps api
+**********/
+
+function initMap() {
+  var directionsDisplay = new google.maps.DirectionsRenderer;
+  var directionsService = new google.maps.DirectionsService;
+  var uluru = {lat: 43.6577971, lng: -79.38109829999996};
+  var destination = {lat: 43.6558227, lng: -79.38196419999997};
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 14,
+    center: uluru
+  });
+  directionsDisplay.setMap(map);
+  calculateAndDisplayRoute(directionsService, directionsDisplay);
+  var contentString = '<div id="content">' +
+                      '<div id="siteNotice"></div>' +
+                      '<h1 id ="store" class="firstHeading">Best Buy Has Deals</h1>' +
+                      '<img align="Left" src="images/best-buy-deal-1.png">' +
+                      '</div>'
+                      '</div>';
+  var infoWindow = new google.maps.InfoWindow({
+    content: contentString,
+    maxWidth: 200,
+    maxHeight: 1000
+    // content: '<img align="Left" src="images/best-buy-deals.jpg" width=50 height=50>'
+  });
+
+  var marker = new google.maps.Marker({
+    position: destination,
+    map: map,
+    title: 'Best Buy Sales'
+  });
+  marker.addListener('click', function() {
+    infoWindow.open(map, marker);
+  });
+}
+
+function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+  directionsService.route({
+    origin: {lat: 43.6577971, lng: -79.38109829999996},
+    destination: {lat: 43.6558227, lng: -79.38196419999997},
+    travelMode: google.maps.TravelMode["DRIVING"]
+  }, function(response, status) {
+    if (status == 'OK') {
+      directionsDisplay.setDirections(response);
+    } else {
+      conosle.log('Directions request failed due to ' + status);
+    }
+  });
+}
+
 /***********
 BOTH DRIVER AND PASSENGER
 *************/
