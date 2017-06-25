@@ -25,7 +25,7 @@
     margin-left: 0;
     margin-right: 0;
     height: 100%;
-    
+
 }
 .app {
     padding: 5px;
@@ -77,12 +77,9 @@ i.huge.icon {
     float: left;
     font-size: 2.7em;
 }
-h2 {
+.in-out-temps {
     margin: 0;
     padding: 0;
-}
-hr {
-    margin: 0;
 }
 #temp-dsip {
     background: rgba(20, 20, 20, 0.3);
