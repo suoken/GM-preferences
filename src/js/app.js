@@ -19,8 +19,17 @@ function processPosition(position){
   var lat = position.coords.latitude;
   var lng = position.coords.longitude;
   console.log("Lat: " + lat);
-  console.log("Long: " + lng); 
+  console.log("Long: " + lng);
 }
+
+// gm.ui.showAlert({
+//   alertTitle: 'Hey Jude',
+//   alertDetail: 'Don/t let me down',
+//   primaryButtonText: 'I won/t!',
+//   // primaryAction: function stayAndPractice() {},
+//   secondaryButtonText: 'Sorry, Paul',
+//   // secondaryAction: function hangWithYoko() {}
+// })
 
 /***********
 BOTH DRIVER AND PASSENGER
@@ -35,7 +44,7 @@ $.getJSON(weatherURL, function(data){
   if (weatherOutside == "Clouds") {
     console.log("The weather outside is " + weatherOutside);
   }
-  if (weatherOutside == "Rain") {
+  if (weatherOutside == "Rain" || weatherOutside == "Thunderstorm") {
     console.log("The weather outside is " + weatherOutside); // suppose to print out rain
     gm.info.getVehicleData(closePassengerWindow, ['window_passenger']);
     gm.info.getVehicleData(closeDriverWindow, ['window_driver']);
@@ -108,9 +117,9 @@ function setRightTemp(data) {
 
 function closePassengerWindow(data) {
   // close the windows
-  console.log("Windows are " + data.window_passenger);
   // window_passeger is an int. 0 is closed. Set window_passenger to 0 to close
   data.window_passenger = 0;
+  console.log("Windows are " + data.window_passenger);
   // do ai to figure out what user preferences are during certain weather patterns
 }
 
@@ -157,6 +166,58 @@ function wipersOn(data) {
 //   // console.log("Rain beginning");
 // }
 
+/*********
+Google maps api
+**********/
+
+function initMap() {
+  var directionsDisplay = new google.maps.DirectionsRenderer;
+  var directionsService = new google.maps.DirectionsService;
+  var uluru = {lat: 43.6577971, lng: -79.38109829999996};
+  var destination = {lat: 43.6558227, lng: -79.38196419999997};
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 14,
+    center: uluru
+  });
+  directionsDisplay.setMap(map);
+  calculateAndDisplayRoute(directionsService, directionsDisplay);
+  var contentString = '<div id="content">' +
+                      '<div id="siteNotice"></div>' +
+                      '<h1 id ="store" class="firstHeading">Best Buy Has Deals</h1>' +
+                      '<img align="Left" src="images/best-buy-deal-1.png">' +
+                      '</div>'
+                      '</div>';
+  var infoWindow = new google.maps.InfoWindow({
+    content: contentString,
+    maxWidth: 200,
+    maxHeight: 1000
+    // content: '<img align="Left" src="images/best-buy-deals.jpg" width=50 height=50>'
+  });
+
+  var marker = new google.maps.Marker({
+    position: destination,
+    map: map,
+    title: 'Best Buy Sales'
+  });
+  marker.addListener('click', function() {
+    infoWindow.open(map, marker);
+  });
+}
+
+function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+  directionsService.route({
+    origin: {lat: 43.6577971, lng: -79.38109829999996},
+    destination: {lat: 43.6558227, lng: -79.38196419999997},
+    travelMode: google.maps.TravelMode["DRIVING"]
+  }, function(response, status) {
+    if (status == 'OK') {
+      directionsDisplay.setDirections(response);
+    } else {
+      conosle.log('Directions request failed due to ' + status);
+    }
+  });
+}
 var temperatureArray = [[15,28],[14,26],[16,29],[12,25]]
 var convertedData = 0;
 var count = 0;

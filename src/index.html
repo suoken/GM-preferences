@@ -9,15 +9,17 @@
 
     <!-- Your custom files -->
     <link rel="stylesheet" href="css/app.css" type="text/css">
-	 <link rel="stylesheet" href="css/grid.css" type="text/css"> 
+	 <link rel="stylesheet" href="css/grid.css" type="text/css">
 	 <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
 	 <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/button.min.css" rel="stylesheet">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/icon.min.css" rel="stylesheet">  
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/icon.min.css" rel="stylesheet">
+
+    <script aync defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeUuL0I2jB14yFG630D1C8zQCRQqCsrv0&callback=initMap"></script>
 
     <script src="GMLIB/system.js"></script>
     <script src="GMLIB/info.js"></script>
-	
-    <script src="js/jquery-3.2.1.min.js"></script> 
+
+    <script src="js/jquery-3.2.1.min.js"></script>
     <!-- Uncomment libraries as you need them: -->
     <!-- <script src="GMLIB/comm.js"></script> -->
     <!-- <script src="GMLIB/io.js"></script> -->
@@ -32,6 +34,17 @@
   </head>
   <body>
     <div id="wrapper">
+      <div id="close"><img src="images/close.png" onclick="gm.system.closeApp()" alt="close"></div>
+      <div id="main">
+
+        <!-- Remove all code inside #main and add your own! -->
+        <!-- <a href="mirror.html"><h1>Car Prevent</h1></a>
+        <p>
+          Your VIN is: <span id="vin"></span>
+        </p>
+        <h3>Google Maps Resturants</h3>
+        <div id="map"=</div> -->
+
 		<div id="close"><img src="images/close.png" onclick="gm.system.closeApp()" alt="close"></div>
 		<div id="main">
 			<div id="welcome" data-aos="fade-up">
@@ -40,19 +53,19 @@
 		  		<div class="buttons">
 		  			<div class="ui black button btn" tabindex="0">Login</div>
 		  			<div class="ui gray button btn" id="skip" tabindex="0">Skip</div>
-		  		</div>	
+		  		</div>
 			</div>
 			<div id="secondary" class="hide">
 				 <div class="name">
 				 	<h3 id="name">Peter Parker</h3>
 				 	<div class="underline"></div>
-				 </div>	  
+				 </div>
 				<div class="row">
 				 <div class="col-sm-6 seating">
 					  <h4 class="roboto regular">Which positon would you prefer?</h4>
 					 <div class="card">
 						 <img src="images/seat.png" id="seat-img"/>
-					 </div> 	 
+					 </div>
 					  <div class="row">
 							<div class="col-sm-3 col-sm-offset-1">
 							  <button class="ui green button btn">Comfortable</button>
@@ -78,7 +91,7 @@
 							</div>
 						</div>
 					</div>
-				 </div>	  
+				 </div>
 			</div>
 			<div class="bottom">
 				<a href="menu.html"><button class="ui small black button btn">Menu</button></a>
@@ -97,7 +110,7 @@
 			easing: 'ease-in-sine'
 		});
 	 </script>
-		
+
 
 	<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
   </body>
