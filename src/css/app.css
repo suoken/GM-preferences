@@ -24,7 +24,8 @@
 
 /*CHADLEY'S CSS*/
 .hours {
-  padding-top: 10px;
+  padding-top: 1%;
+  padding-left: 2%;
   font-family: "Roboto Condensed";
 }
 
@@ -50,17 +51,12 @@ img {
                15px 15px 23px rgba(0,0,0,0.1);
 }
 
-.weekly {
-
-}
-
 #backkkk {
   background: url(https://ak3.picdn.net/shutterstock/videos/2453177/thumb/1.jpg);
 }
 
 .now {
   padding-top: 5%;
-  padding-bottom: 2%;
   border-right: 2px solid black;
 }
 
@@ -71,7 +67,11 @@ img {
 }
 
 #center {
-  margin-top: 50%;
-  margin-left: 12%;
+  margin-top: 30%;
+  margin-left: 5%;
+}
 
+#NOW {
+  font-size: 1.5em;
+  font-family: "Bitter";
 }
