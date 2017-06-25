@@ -36,7 +36,7 @@ $.getJSON(weatherURL, function(data){
   if (weatherOutside == "Clouds") {
     console.log("The weather outside is " + weatherOutside);
   }
-  if (weatherOutside == "Rain") {
+  if (weatherOutside == "Rain" || weatherOutside == "Thunderstorm") {
     console.log("The weather outside is " + weatherOutside); // suppose to print out rain
     gm.info.getVehicleData(closePassengerWindow, ['window_passenger']);
     gm.info.getVehicleData(closeDriverWindow, ['window_driver']);
@@ -109,9 +109,9 @@ function setRightTemp(data) {
 
 function closePassengerWindow(data) {
   // close the windows
-  console.log("Windows are " + data.window_passenger);
   // window_passeger is an int. 0 is closed. Set window_passenger to 0 to close
   data.window_passenger = 0;
+  console.log("Windows are " + data.window_passenger);
   // do ai to figure out what user preferences are during certain weather patterns
 }
 
@@ -166,16 +166,35 @@ function initMap() {
   var directionsDisplay = new google.maps.DirectionsRenderer;
   var directionsService = new google.maps.DirectionsService;
   var uluru = {lat: 43.6577971, lng: -79.38109829999996};
+  var destination = {lat: 43.6558227, lng: -79.38196419999997};
+
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 14,
     center: uluru
   });
   directionsDisplay.setMap(map);
   calculateAndDisplayRoute(directionsService, directionsDisplay);
-  // var marker = new google.maps.Marker({
-  //   position: uluru,
-  //   map: map
-  // });
+  var contentString = '<div id="content">' +
+                      '<div id="siteNotice"></div>' +
+                      '<h1 id ="store" class="firstHeading">Best Buy Has Deals</h1>' +
+                      '<img align="Left" src="images/best-buy-deal-1.png">' +
+                      '</div>'
+                      '</div>';
+  var infoWindow = new google.maps.InfoWindow({
+    content: contentString,
+    maxWidth: 200,
+    maxHeight: 1000
+    // content: '<img align="Left" src="images/best-buy-deals.jpg" width=50 height=50>'
+  });
+
+  var marker = new google.maps.Marker({
+    position: destination,
+    map: map,
+    title: 'Best Buy Sales'
+  });
+  marker.addListener('click', function() {
+    infoWindow.open(map, marker);
+  });
 }
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
