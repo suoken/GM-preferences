@@ -34,11 +34,11 @@
 		<div id="close"><img src="images/close.png" onclick="gm.system.closeApp()" alt="close"></div>
 		<div id="main">
 			<div id="welcome" data-aos="fade-up">
-		  			<h1 id="hello">Good Morning Peter!</h1>
+		  			<h1 id="hello">Good Morning Peter!<i class="sun icon"></i></h1>
 			  		<p class="regular">How can I help you today?</p>
 		  		<div class="buttons">
-		  			<div class="ui green button btn" tabindex="0">Login</div>
-		  			<div class="ui red button btn" id="skip" tabindex="0">Skip</div>
+		  			<div class="ui black button btn" tabindex="0">Login</div>
+		  			<div class="ui gray button btn" id="skip" tabindex="0">Skip</div>
 		  		</div>	
 			</div>
 			<div id="secondary" class="hide">
@@ -46,25 +46,33 @@
 				 	<h3 id="name">Peter Parker</h3>
 				 	<div class="underline"></div>
 				 </div>	  
-				 <div class="seating">
-					  <h4 class="roboto">What positon would you prefer?</h4>
+				<div class="row">
+				 <div class="col-sm-6 seating">
+					  <h4 class="roboto regular">Which positon would you prefer?</h4>
+					 <div class="card">
+						 <img src="images/seat.png" id="seat-img"/>
+					 </div> 	 
 					  <div class="row">
-							<div class="col-sm-4">
-							  <h1>hello</h1>
+							<div class="col-sm-3 col-sm-offset-1">
+							  <button class="ui green button btn">Relaxed</button>
 							</div>
-							<div class="col-sm-4">
-							  <h1>hello</h1>
+							<div class="col-sm-3">
+							  <button class="ui blue button btn">Relaxed</button>
 							</div>
-							<div class="col-sm-4">
-							  <h1>hello</h1>
-							</div>
-					  <hr/>
+							<div class="col-sm-3">
+							  <button class="ui orange button btn">Relaxed</button>
+						   </div>
+				 	 </div>
+					</div>
+					<div class="row">
+				 		<div class="col-sm-6 mirrors">
+					 		<h4 class="roboto regular">Make some mirror adjustments.</h4>
+						</div>
+					</div>
 				 </div>	  
-				 <div class="mirrors">
-					 <h4 class="roboto">Mirror adjustments?</h4>
-					  
-				 </div>	  
-				 </div>	  
+			</div>
+			<div class="bottom">
+				<button class="ui small black button btn">Home</button>
 			</div>
       </div>
     </div>
