@@ -11,8 +11,17 @@ function processPosition(position){
   var lat = position.coords.latitude;
   var lng = position.coords.longitude;
   console.log("Lat: " + lat);
-  console.log("Long: " + lng); 
+  console.log("Long: " + lng);
 }
+
+// gm.ui.showAlert({
+//   alertTitle: 'Hey Jude',
+//   alertDetail: 'Don/t let me down',
+//   primaryButtonText: 'I won/t!',
+//   // primaryAction: function stayAndPractice() {},
+//   secondaryButtonText: 'Sorry, Paul',
+//   // secondaryAction: function hangWithYoko() {}
+// })
 
 /***********
 BOTH DRIVER AND PASSENGER
@@ -148,3 +157,37 @@ function wipersOn(data) {
 //   }
 //   // console.log("Rain beginning");
 // }
+
+/*********
+Google maps api
+**********/
+
+function initMap() {
+  var directionsDisplay = new google.maps.DirectionsRenderer;
+  var directionsService = new google.maps.DirectionsService;
+  var uluru = {lat: 43.6577971, lng: -79.38109829999996};
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 14,
+    center: uluru
+  });
+  directionsDisplay.setMap(map);
+  calculateAndDisplayRoute(directionsService, directionsDisplay);
+  // var marker = new google.maps.Marker({
+  //   position: uluru,
+  //   map: map
+  // });
+}
+
+function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+  directionsService.route({
+    origin: {lat: 43.6577971, lng: -79.38109829999996},
+    destination: {lat: 43.6558227, lng: -79.38196419999997},
+    travelMode: google.maps.TravelMode["DRIVING"]
+  }, function(response, status) {
+    if (status == 'OK') {
+      directionsDisplay.setDirections(response);
+    } else {
+      conosle.log('Directions request failed due to ' + status);
+    }
+  });
+}
