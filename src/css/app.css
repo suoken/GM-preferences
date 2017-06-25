@@ -16,6 +16,10 @@
 	-ms-filter: "FlipH";
 }
 
+.name {
+	position: absolute;
+}
+
 #close {
   position: absolute;
   top: 90px;
