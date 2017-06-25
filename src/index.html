@@ -9,7 +9,14 @@
 
     <!-- Your custom files -->
     <link rel="stylesheet" href="css/app.css" type="text/css">
+
+    <link rel="stylesheet" type="text/css" href="css/grid.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+
 	<link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/button.min.css">
 
     <script src="GMLIB/system.js"></script>
     <script src="GMLIB/info.js"></script>
@@ -29,13 +36,79 @@
     <div id="wrapper">
       <div id="close"><img src="images/close.png" onclick="gm.system.closeApp()" alt="close"></div>
       <div id="main">
+        <div id="backkkk">
+          <div class="weatherTitle">
+           Weather
+          </div>
 
-        <!-- Remove all code inside #main and add your own! -->
-        <a href="mirror.html"><h1>Car Prevent</h1></a>
-        <p>
-          Your VIN is: <span id="vin"></span>
-        </p>
+        
+          <div class="jumbotron hours">
+          <!--CURRENT WEATHER-->
+          <div class="row">
+            <div class="col-sm-2 now" id="hour1">Now
+                <img src="https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/kweather.png">
+                <p>30°</p>
 
+                <div id="center"><button class="ui yellow button btn">Home</button> </div>
+            </div>
+
+            <!--HOURLY WEATHER-->
+            <div class="col-sm-10">
+              <div class="row">
+              <div class="col-sm-2">3:00 PM
+                <img src="https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/kweather.png">
+                <p>29°</p>
+              </div>
+              <div class="col-sm-2">4:00 PM
+                <img src="https://cdn2.iconfinder.com/data/icons/weather-24/256/Cloud_Cover-512.png">
+                <p>28°</p>
+              </div>
+              <div class="col-sm-2">5:00 PM
+                <img src="https://cdn2.iconfinder.com/data/icons/weather-24/256/Cloud_Cover-512.png">
+                <p>27°</p>
+              </div>
+              <div class="col-sm-2">6:00 PM
+                <img src="https://cdn2.iconfinder.com/data/icons/weather-24/256/Cloud_Cover-512.png">
+                <p>26°</p>
+              </div>
+              <div class="col-sm-2">7:00 PM
+                <img src="https://cdn1.iconfinder.com/data/icons/weatherly-2/512/Cloudy_rainy_and_night-512.png">
+                <p>24°</p>
+              </div>
+              <div class="col-sm-2">8:00 PM
+                <img src="https://cdn1.iconfinder.com/data/icons/weatherly-2/512/Cloudy_rainy_and_night-512.png">
+                <p>22°</p>
+              </div>
+            </div>
+          
+          <hr id="hor">
+              <!--WEEKLY WEATHER-->
+          <div class="row weekly">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2">Tomorrow
+              <img src="https://cdn2.iconfinder.com/data/icons/weather-24/256/Cloud_Cover-512.png">
+              <p>21°</p>
+            </div>
+            <div class="col-sm-2">Tuesday
+               <img src="https://cdn2.iconfinder.com/data/icons/weather-24/256/Cloud_Cover-512.png">
+               <p>23°</p>
+            </div>
+            <div class="col-sm-2">Wednesday
+              <img src="https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/kweather.png">
+              <p>27°</p>
+            </div>
+            <div class="col-sm-2">Thursday
+              <img src="https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/kweather.png">
+              <p>26°</p>
+            </div>
+          </div>
+            </div>
+            </div>
+          </div>
+          </div>
+
+          
+        </div>
       </div>
     </div>
 
