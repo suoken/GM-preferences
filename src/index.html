@@ -9,10 +9,14 @@
 
     <!-- Your custom files -->
     <link rel="stylesheet" href="css/app.css" type="text/css">
-	<link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+	 <link rel="stylesheet" href="css/grid.css" type="text/css"> 
+	 <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+	 <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/button.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/icon.min.css" rel="stylesheet">  
 
     <script src="GMLIB/system.js"></script>
     <script src="GMLIB/info.js"></script>
+	
     <!-- Uncomment libraries as you need them: -->
     <!-- <script src="GMLIB/comm.js"></script> -->
     <!-- <script src="GMLIB/io.js"></script> -->
@@ -27,20 +31,53 @@
   </head>
   <body>
     <div id="wrapper">
-      <div id="close"><img src="images/close.png" onclick="gm.system.closeApp()" alt="close"></div>
-      <div id="main">
-
-        <!-- Remove all code inside #main and add your own! -->
-        <a href="mirror.html"><h1>Car Prevent</h1></a>
-        <p>
-          Your VIN is: <span id="vin"></span>
-        </p>
-
+		<div id="close"><img src="images/close.png" onclick="gm.system.closeApp()" alt="close"></div>
+		<div id="main">
+			<div id="welcome" data-aos="fade-up">
+		  			<h1 id="hello">Good Morning Peter!</h1>
+			  		<p class="regular">How can I help you today?</p>
+		  		<div class="buttons">
+		  			<div class="ui green button btn" tabindex="0">Login</div>
+		  			<div class="ui red button btn" id="skip" tabindex="0">Skip</div>
+		  		</div>	
+			</div>
+			<div id="secondary" class="hide">
+				 <div class="name">
+				 	<h3 id="name">Peter Parker</h3>
+				 	<div class="underline"></div>
+				 </div>	  
+				 <div class="seating">
+					  <h4 class="roboto">What positon would you prefer?</h4>
+					  <div class="row">
+							<div class="col-sm-4">
+							  <h1>hello</h1>
+							</div>
+							<div class="col-sm-4">
+							  <h1>hello</h1>
+							</div>
+							<div class="col-sm-4">
+							  <h1>hello</h1>
+							</div>
+					  <hr/>
+				 </div>	  
+				 <div class="mirrors">
+					 <h4 class="roboto">Mirror adjustments?</h4>
+					  
+				 </div>	  
+				 </div>	  
+			</div>
       </div>
     </div>
 
     <!-- Your app code: -->
     <script src="js/app.js"></script>
-	<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+	 <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+	 <script>
+		AOS.init({
+			duration: 900,
+			easing: 'ease-in-sine'
+		});
+	 </script>
+		
   </body>
 </html>
