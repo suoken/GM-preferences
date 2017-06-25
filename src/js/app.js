@@ -5,6 +5,15 @@ gm.info.getVehicleConfiguration(function(data) {
   vinElem.innerHTML = gm.info.getVIN();
 });
 
+gm.info.getCurrentPosition(processPosition, true)
+
+function processPosition(position){
+  var lat = position.coords.latitude;
+  var lng = position.coords.longitude;
+  console.log("Lat: " + lat);
+  console.log("Long: " + lng); 
+}
+
 /***********
 BOTH DRIVER AND PASSENGER
 *************/
@@ -127,5 +136,15 @@ function openRearLeftWindow(data) {
 
 function wipersOn(data) {
   data.wipers_on = 1;
-  console.log("Wipers are on"); 
+  console.log("Wipers are on");
 }
+
+// gm.voice.startTTS(success, 'Keep your eyes on the road, your hands up on the wheel');
+//
+// function success() {
+//   // let it roll
+//   if (gm.voice && gm.voice.startTTS) {
+//     console.log("rain");
+//   }
+//   // console.log("Rain beginning");
+// }
