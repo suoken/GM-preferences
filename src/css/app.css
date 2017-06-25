@@ -3,6 +3,23 @@
   text-align: center;
 }
 
+#img {
+	width: 120%;
+	margin-top: 10px;
+}
+.flip {
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
+}
+
+.name {
+	position: absolute;
+}
+
 #close {
   position: absolute;
   top: 90px;
@@ -16,8 +33,199 @@
   width: 100%;
 }
 
+.weather-images img {
+  width: 100%;
+}
+
+.hide {
+	display: none;
+}
+
+/* first page */
+#welcome {
+	height: 100%;
+	margin-top: 15%;
+}
+
+.buttons {
+	margin-top: 10%;
+}
+
+.btn {
+	border-radius: 0px !important;
+}
+
+/* secondary */
+#name {
+	 text-align: left;
+	 padding: 0px;
+	 padding-left: 10px;
+}
+
+.seating {
+	 min-height: 100%;
+}
+
+#seat-img {
+	width: 130px;
+	margin-bottom: 10px;
+}
+
+.card {
+  	background: #2980b9;
+  	display: inline-block;
+  	position: relative;
+	padding: 10px;
+  	width: 311px;
+	margin-top: -10px;
+	margin-left: -4px;
+	margin-bottom: 3px;
+}
+
+.bottom {
+	float: right;
+	margin-right: 10px;
+}
+
 @media (min-width: 801px) {
   #close {
     top: 104px;
   }
+}
+
+.row-main {
+    margin-left: 0;
+    margin-right: 0;
+    height: 100%;
+
+}
+.app {
+    padding: 5px;
+    /*width: 16%;*/
+}
+.wrap {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+.vertical-line {
+    height: 100%;
+    border-left: 2px solid #141414;
+}
+.today-weather {
+    width: 85%;
+    height: auto;
+}
+#app-row-1 {
+    margin-top: 10%;
+}
+#app-row-2 {
+    margin-top: 5%;
+}
+
+i.huge.icon {
+    font-size: 3.6em
+}
+
+#left-right-app-ctrl {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 146px 0 0 0px;
+    width: 100%;
+    height: 45px;
+    z-index:1;
+    /*background-color: rgba(10, 10, 10, 0.4);*/
+}
+
+#right-arrow {
+    float: right;
+    font-size: 2.7em;
+}
+#left-arrow {
+    float: left;
+    font-size: 2.7em;
+}
+.in-out-temps {
+    margin: 0;
+    padding: 0;
+}
+#temp-disp {
+    background-image: url("https://cdn.theatlantic.com/assets/media/img/mt/2016/03/RTX283V4/lead_960.jpg?1457553386");
+
+}
+#deg-20 {
+    margin-bottom: 10px;
+
+/*CHADLEY'S CSS*/
+.hours {
+  padding-top: 1%;
+  padding-left: 2%;
+  font-family: "Roboto Condensed";
+}
+
+#image {
+  width: 100%;
+}
+
+.weatherImg {
+  width: 100%;
+  height: auto;
+}
+
+.weatherTitle {
+  font-size: 2em;
+  background: url(http://www.vectorportal.com/img_novi/Sunshine-background-1018.jpg);
+  background-size: 100%;
+  border-bottom: 2px solid black;
+  border-top: 1px solid black;
+  font-family: "Roboto Condensed";
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.4),
+               6px 6px 13px rgba(0,0,0,0.2),
+               15px 15px 23px rgba(0,0,0,0.1);
+}
+
+#backkkk {
+  background: url(https://ak3.picdn.net/shutterstock/videos/2453177/thumb/1.jpg);
+}
+
+.now {
+  padding-top: 5%;
+  border-right: 2px solid black;
+}
+
+#hor {
+  border: 1px solid black;
+  background-color: 2px solid black;
+  width: 80%;
+}
+
+#center {
+  margin-top: 30%;
+  margin-left: 5%;
+}
+
+#NOW {
+  font-size: 1.5em;
+  font-family: "Bitter";
+  
+/* font */ 
+.regular {
+	font-size: 1.4rem;
+}
+
+.roboto {
+	 font-family: 'Roboto', sans-serif;
+	 font-weight: 500;
+}
+
+.underline {
+	 width: 50px;
+	 height: 2px;
+	 background-color: lightseagreen;
+	 margin-left: 15px;
+	 margin-top: -13px;
 }
