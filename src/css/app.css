@@ -83,8 +83,11 @@
 }
 
 .bottom {
-	float: right;
-	margin-right: 10px;
+	float: left;
+	margin-left: 150px;
+  margin-top: -80px;
+  width: 100%;
+  position: absolute;
 }
 
 @media (min-width: 801px) {
@@ -211,8 +214,8 @@ i.huge.icon {
 #NOW {
   font-size: 1.5em;
   font-family: "Bitter";
-  
-/* font */ 
+
+/* font */
 .regular {
 	font-size: 1.4rem;
 }

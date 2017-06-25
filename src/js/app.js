@@ -19,7 +19,7 @@ function processPosition(position){
   var lat = position.coords.latitude;
   var lng = position.coords.longitude;
   console.log("Lat: " + lat);
-  console.log("Long: " + lng); 
+  console.log("Long: " + lng);
 }
 
 /***********
@@ -65,11 +65,14 @@ gm.info.getVehicleData(setLeftTemp, ['front_left_set_temperature', 'front_fan_sp
 function setLeftTemp(data) {
   console.log("Outside Temp: " + data.outside_air_temp); // Outside Temp is 20
   console.log('Setting vehicle data: ', data);
-  if (data.outside_air_temp > data.front_left_set_temperature) {
+  // if (data.outside_air_temp > data.front_left_set_temperature) {
     // AI modeling for the temperature will be set here
-    data.front_left_set_temperature = 68;
-    console.log("The temperature for the left is " + data.front_left_set_temperature);
-  }
+  data.front_left_set_temperature = 22;
+  var airTempLeft = document.getElementById("air-temp-left-status");
+  airTempLeft.innerHTML = "Passenger air temp set to " + data.front_left_set_temperature + " &#8451";
+
+  console.log("The temperature for the left is " + data.front_left_set_temperature);
+  // }
   console.log("text");
   console.log(data.front_fan_speed);
   if (data.front_fan_speed == 0) {
@@ -99,11 +102,13 @@ gm.info.getVehicleData(setRightTemp, ['front_right_set_temperature', 'outside_ai
 function setRightTemp(data) {
   console.log("Outside Temp: " + data.outside_air_temp);
   console.log('Setting vehicle data: ', data);
-  if (data.front_right_set_temperature) {
+  // if (data.front_right_set_temperature) {
     // AI modeling for the temperature will be set here
-    data.front_right_set_temperature = 68;
+    data.front_right_set_temperature = 18;
+    var airTempRight = document.getElementById("air-temp-right-status");
+    airTempRight.innerHTML = "Passenger air temp set to " + data.front_right_set_temperature + " &#8451";
     console.log("The temperature for the right is " + data.front_right_set_temperature);
-  }
+  // }
 }
 
 function closePassengerWindow(data) {
@@ -130,21 +135,31 @@ function closeRearWindow(data) {
   // 0 is closed. Because it's raining, you obviously want it closed
   data.window_leftrear = 0;
   data.window_rightrear = 0;
+  var windowStatus = document.getElementById("window-status");
+  windowStatus.innerHTML = "Rain is forcasted. All windows are closed. <br/> "
+
 }
 
 function  openRearRightWindow(data) {
   // 6 is open. More AI to learn what the user actually wants ("Does the person want windows partially open...?")
   data.window_rightrear = 6;
+  var windowStatus = document.getElementById("window-status");
+  windowStatus.innerHTML = "Sunny Days. Windows are open. <br/> "
 }
 
 function openRearLeftWindow(data) {
   // 6 is open. More AI to learn what the user actually wants
   data.window_leftrear = 6;
+  var windowStatus = document.getElementById("window-status");
+  windowStatus.innerHTML = "Sunny Days. Windows are open. <br/> "
 }
 
 function wipersOn(data) {
   data.wipers_on = 1;
   console.log("Wipers are on");
+  var wiperStatus = document.getElementById("wiper-status");
+  wiperStatus.innerHTML = "Wipers are on.";
+
 }
 
 // gm.voice.startTTS(success, 'Keep your eyes on the road, your hands up on the wheel');
@@ -174,7 +189,7 @@ function showSpeed(data){
 }
 function getTemperature(data) {
 	convertedData = (data.outside_air_temp)
-	
+
 }
 
 
@@ -215,7 +230,7 @@ function get_destination(data) {
 }
 
 function set_destination(data){
-	
+
 console.log("destination has been set at " + data)
 
 }
@@ -228,12 +243,12 @@ function timeOfDay(data) {
 
 
 function convert(dataTemp){
-	
+
 	if (typeof(dataTemp) == "string"){
 		//console.log(temp.hexa[dataTemp]);
 		return temp.hexa[dataTemp];
 	} else {
-		
+
 		//console.log(temp.num[dataTemp]);
 		return temp.num[dataTemp];
 	}
@@ -262,4 +277,4 @@ gm.nav.setDestination(set_destination, dest)
 
 
 
-//weather outside, temperature inside, mirror, seating, traffic by accident, 
+//weather outside, temperature inside, mirror, seating, traffic by accident,
