@@ -1,6 +1,6 @@
 /* Your CSS goes here */
 #main {
-    text-align: center;
+  text-align: center;
 }
 
 #close {
@@ -21,7 +21,7 @@
     top: 104px;
   }
 }
-.row {
+.row-main {
     margin-left: 0;
     margin-right: 0;
     height: 100%;
@@ -62,7 +62,7 @@ i.huge.icon {
     right: 0;
     bottom: 0;
     left: 0;
-    margin: 170px 0 0 0px;
+    margin: 146px 0 0 0px;
     width: 100%;
     height: 45px;
     z-index:1;
@@ -81,6 +81,10 @@ i.huge.icon {
     margin: 0;
     padding: 0;
 }
-#temp-dsip {
-    background: rgba(20, 20, 20, 0.3);
+#temp-disp {
+    background-image: url("https://cdn.theatlantic.com/assets/media/img/mt/2016/03/RTX283V4/lead_960.jpg?1457553386");
+
+}
+#deg-20 {
+    margin-bottom: 10px;
 }
