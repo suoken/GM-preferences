@@ -45,6 +45,27 @@
 	 min-height: 100%;
 }
 
+#seat-img {
+	width: 130px;
+	margin-bottom: 10px;
+}
+
+.card {
+  	background: #2980b9;
+  	display: inline-block;
+  	position: relative;
+	padding: 10px;
+  	width: 311px;
+	margin-top: -10px;
+	margin-left: -4px;
+	margin-bottom: 3px;
+}
+
+.bottom {
+	font-size: 10px;
+}
+
+
 @media (min-width: 801px) {
   #close {
     top: 104px;
@@ -58,7 +79,7 @@
 
 .roboto {
 	 font-family: 'Roboto', sans-serif;
-	 font-weight: 400;
+	 font-weight: 500;
 }
 
 .underline {
