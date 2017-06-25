@@ -16,8 +16,55 @@
   width: 100%;
 }
 
+.hide {
+	display: none;
+}
+
+/* first page */
+#welcome {
+	height: 100%;
+	margin-top: 15%;
+}
+
+.buttons {
+	margin-top: 10%;
+}
+
+.btn {
+	border-radius: 0px !important;
+}
+
+/* secondary */
+#name {
+	 text-align: left;
+	 padding: 0px;
+	 padding-left: 10px;
+}
+
+.seating {
+	 min-height: 100%;
+}
+
 @media (min-width: 801px) {
   #close {
     top: 104px;
   }
+}
+
+/* font */ 
+.regular {
+	font-size: 1.4rem;
+}
+
+.roboto {
+	 font-family: 'Roboto', sans-serif;
+	 font-weight: 400;
+}
+
+.underline {
+	 width: 50px;
+	 height: 2px;
+	 background-color: lightseagreen;
+	 margin-left: 15px;
+	 margin-top: -13px;
 }
