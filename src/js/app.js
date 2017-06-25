@@ -13,3 +13,10 @@ $("#temp-disp").on('click', function() {
 	});
 });
 
+var skip = document.getElementById('skip');
+var welcome = document.getElementById('welcome');
+var second = document.getElementById('secondary');
+skip.addEventListener('click', function(){
+   welcome.classList.add('hide');
+   second.classList.remove('hide');
+});
