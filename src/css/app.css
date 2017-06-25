@@ -76,6 +76,73 @@
   }
 }
 
+.row-main {
+    margin-left: 0;
+    margin-right: 0;
+    height: 100%;
+
+}
+.app {
+    padding: 5px;
+    /*width: 16%;*/
+}
+.wrap {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+.vertical-line {
+    height: 100%;
+    border-left: 2px solid #141414;
+}
+.today-weather {
+    width: 85%;
+    height: auto;
+}
+#app-row-1 {
+    margin-top: 10%;
+}
+#app-row-2 {
+    margin-top: 5%;
+}
+
+i.huge.icon {
+    font-size: 3.6em
+}
+
+#left-right-app-ctrl {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 146px 0 0 0px;
+    width: 100%;
+    height: 45px;
+    z-index:1;
+    /*background-color: rgba(10, 10, 10, 0.4);*/
+}
+
+#right-arrow {
+    float: right;
+    font-size: 2.7em;
+}
+#left-arrow {
+    float: left;
+    font-size: 2.7em;
+}
+.in-out-temps {
+    margin: 0;
+    padding: 0;
+}
+#temp-disp {
+    background-image: url("https://cdn.theatlantic.com/assets/media/img/mt/2016/03/RTX283V4/lead_960.jpg?1457553386");
+
+}
+#deg-20 {
+    margin-bottom: 10px;
+
 /*CHADLEY'S CSS*/
 .hours {
   padding-top: 1%;
