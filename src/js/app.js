@@ -19,7 +19,7 @@ function processPosition(position){
   var lat = position.coords.latitude;
   var lng = position.coords.longitude;
   console.log("Lat: " + lat);
-  console.log("Long: " + lng); 
+  console.log("Long: " + lng);
 }
 
 /***********
@@ -35,7 +35,7 @@ $.getJSON(weatherURL, function(data){
   if (weatherOutside == "Clouds") {
     console.log("The weather outside is " + weatherOutside);
   }
-  if (weatherOutside == "Rain") {
+  // if (weatherOutside == "Rain") {
     console.log("The weather outside is " + weatherOutside); // suppose to print out rain
     gm.info.getVehicleData(closePassengerWindow, ['window_passenger']);
     gm.info.getVehicleData(closeDriverWindow, ['window_driver']);
@@ -43,15 +43,15 @@ $.getJSON(weatherURL, function(data){
 
     // turn the wipers on when it rains
     gm.info.getVehicleData(wipersOn, ['wipers_on']);
-  }
-  if (weatherOutside == "Sunny") {
+  // }
+  // if (weatherOutside == "Sunny") {
     // I am assuming that because it is sunny outside, they want their windows
     // open. AI hopefully will learn from their preferences (sometimes they like the windows open or closed)
-    gm.info.getVehicleData(openPassengerWindow, ['window_passenger']);
-    gm.info.getVehicleData(openDriverWindow, ['window_driver']);
-    gm.info.getVehicleData(openRearRightWindow, ['window_rightrear']);
-    gm.info.getVehicleData(openRearLeftWindow, ['window_leftrear']);
-  }
+    // gm.info.getVehicleData(openPassengerWindow, ['window_passenger']);
+    // gm.info.getVehicleData(openDriverWindow, ['window_driver']);
+    // gm.info.getVehicleData(openRearRightWindow, ['window_rightrear']);
+    // gm.info.getVehicleData(openRearLeftWindow, ['window_leftrear']);
+  // }
 });
 
 /**************
@@ -69,6 +69,11 @@ function setLeftTemp(data) {
     // AI modeling for the temperature will be set here
     data.front_left_set_temperature = 68;
     console.log("The temperature for the left is " + data.front_left_set_temperature);
+      data.front_left_set_temperature = 22;
+   var airTempLeft = document.getElementById("air-temp-left-status");
+   airTempLeft.innerHTML = "Passenger air temp set to " + data.front_left_set_temperature + " &#8451";
+
+   console.log("The temperature for the left is " + data.front_left_set_temperature);
   }
   console.log("text");
   console.log(data.front_fan_speed);
@@ -101,7 +106,10 @@ function setRightTemp(data) {
   console.log('Setting vehicle data: ', data);
   if (data.front_right_set_temperature) {
     // AI modeling for the temperature will be set here
-    data.front_right_set_temperature = 68;
+    // data.front_right_set_temperature = 68;
+     data.front_right_set_temperature = 18;
+     var airTempRight = document.getElementById("air-temp-right-status");
+     airTempRight.innerHTML = "Passenger air temp set to " + data.front_right_set_temperature + " &#8451";
     console.log("The temperature for the right is " + data.front_right_set_temperature);
   }
 }
@@ -111,6 +119,8 @@ function closePassengerWindow(data) {
   console.log("Windows are " + data.window_passenger);
   // window_passeger is an int. 0 is closed. Set window_passenger to 0 to close
   data.window_passenger = 0;
+  var windowStatus = document.getElementById("window-status");
+  windowStatus.innerHTML = "Rain is forcasted. All windows are closed. <br/> "
   // do ai to figure out what user preferences are during certain weather patterns
 }
 
@@ -145,6 +155,8 @@ function openRearLeftWindow(data) {
 function wipersOn(data) {
   data.wipers_on = 1;
   console.log("Wipers are on");
+  var wiperStatus = document.getElementById("wiper-status");
+ wiperStatus.innerHTML = "Wipers are on.";
 }
 
 // gm.voice.startTTS(success, 'Keep your eyes on the road, your hands up on the wheel');
@@ -174,7 +186,7 @@ function showSpeed(data){
 }
 function getTemperature(data) {
 	convertedData = (data.outside_air_temp)
-	
+
 }
 
 
@@ -215,7 +227,7 @@ function get_destination(data) {
 }
 
 function set_destination(data){
-	
+
 console.log("destination has been set at " + data)
 
 }
@@ -228,12 +240,12 @@ function timeOfDay(data) {
 
 
 function convert(dataTemp){
-	
+
 	if (typeof(dataTemp) == "string"){
 		//console.log(temp.hexa[dataTemp]);
 		return temp.hexa[dataTemp];
 	} else {
-		
+
 		//console.log(temp.num[dataTemp]);
 		return temp.num[dataTemp];
 	}
@@ -262,4 +274,4 @@ gm.nav.setDestination(set_destination, dest)
 
 
 
-//weather outside, temperature inside, mirror, seating, traffic by accident, 
+//weather outside, temperature inside, mirror, seating, traffic by accident,

@@ -9,15 +9,15 @@
 
     <!-- Your custom files -->
     <link rel="stylesheet" href="css/app.css" type="text/css">
-	 <link rel="stylesheet" href="css/grid.css" type="text/css"> 
+	 <link rel="stylesheet" href="css/grid.css" type="text/css">
 	 <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
 	 <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/button.min.css" rel="stylesheet">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/icon.min.css" rel="stylesheet">  
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/icon.min.css" rel="stylesheet">
 
     <script src="GMLIB/system.js"></script>
     <script src="GMLIB/info.js"></script>
-	
-    <script src="js/jquery-3.2.1.min.js"></script> 
+
+    <script src="js/jquery-3.2.1.min.js"></script>
     <!-- Uncomment libraries as you need them: -->
     <!-- <script src="GMLIB/comm.js"></script> -->
     <!-- <script src="GMLIB/io.js"></script> -->
@@ -40,19 +40,18 @@
 		  		<div class="buttons">
 		  			<div class="ui black button btn" tabindex="0">Login</div>
 		  			<div class="ui gray button btn" id="skip" tabindex="0">Skip</div>
-		  		</div>	
+		  		</div>
 			</div>
 			<div id="secondary" class="hide">
 				 <div class="name">
-				 	<h3 id="name">Peter Parker</h3>
 				 	<div class="underline"></div>
-				 </div>	  
+				 </div>
 				<div class="row">
 				 <div class="col-sm-6 seating">
 					  <h4 class="roboto regular">Which positon would you prefer?</h4>
 					 <div class="card">
 						 <img src="images/seat.png" id="seat-img"/>
-					 </div> 	 
+					 </div>
 					  <div class="row">
 							<div class="col-sm-3 col-sm-offset-1">
 							  <button class="ui green button btn">Comfortable</button>
@@ -76,9 +75,17 @@
 									<img src="images/mirror.png" class="flip" id="img"/>
 								</div>
 							</div>
+              <div>
+                 <h4 class="roboto regular">Automatically adjusting settings</h4>
+                 <p id="outside_air_temp"></p>
+                 <p id="air-temp-left-status"></p>
+                 <p id="air-temp-right-status"></p>
+                 <p id="window-status"></p>
+                 <p id="wiper-status"></p>
+              </div>
 						</div>
 					</div>
-				 </div>	  
+				 </div>
 			</div>
 			<div class="bottom">
 				<a href="menu.html"><button class="ui small black button btn">Menu</button></a>
@@ -97,7 +104,7 @@
 			easing: 'ease-in-sine'
 		});
 	 </script>
-		
+
 
 	<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
   </body>
